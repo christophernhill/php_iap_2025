@@ -1,0 +1,32 @@
+#
+###
+module load miniforge
+python3 -m venv --system-site-packages iap
+
+pip install --upgrade pip
+pip install jupyter lab
+pip install xarray
+pip install zarr
+pip install fsspec gcsfs
+pip install dask
+pip install "dask[distributed]" --upgrade 
+pip install graphviz
+pip install nodejs
+pip install dask-labextension
+pip install pooch
+
+git clone https://github.com/pangeo-data/tutorial-data.git
+pip install netcdf4
+pip install h5netcdf
+
+
+
+###
+module load miniforge
+. iap/bin/activate
+jupyter lab --no-browser --ip=0.0.0.0
+
+
+
+
+
